@@ -50,12 +50,4 @@ public class BoardServiceImpl implements BoardService {
 	public int getBoardTotalCnt(Map<String, String> paramMap) {
 		return boardDAO.getBoardTotalCnt(paramMap);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 }

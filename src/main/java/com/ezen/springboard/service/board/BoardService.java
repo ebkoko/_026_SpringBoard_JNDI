@@ -29,15 +29,4 @@ public interface BoardService {
 	//검색했을 때는 검색된 게시글의 총 개수를 조회
 	int getBoardTotalCnt(Map<String, String> paramMap);
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

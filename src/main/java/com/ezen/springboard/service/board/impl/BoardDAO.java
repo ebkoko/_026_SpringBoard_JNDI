@@ -53,16 +53,4 @@ public class BoardDAO {
 	public int getBoardTotalCnt(Map<String, String> paramMap) {
 		return mybatis.selectOne("BoardDAO.getBoardTotalCnt", paramMap);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
