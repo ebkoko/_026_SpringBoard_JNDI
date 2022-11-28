@@ -219,7 +219,7 @@
 				}
 				
 				//비밀번호와 비밀번호 확인이 일치하지 않을 때
-				if(!pwCheck) {
+				if(!pwCheck) {d
 					alert("비밀번호가 일치하지 않습니다.");
 					$("#userPwCheck").focus();
 					e.preventDefault();
@@ -227,23 +227,6 @@
 				}
 			});
 		});
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 	</script>
 </body>

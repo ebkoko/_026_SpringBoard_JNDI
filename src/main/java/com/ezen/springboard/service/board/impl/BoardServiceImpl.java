@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ezen.springboard.service.board.BoardService;
+import com.ezen.springboard.vo.BoardFileVO;
 import com.ezen.springboard.vo.BoardVO;
 import com.ezen.springboard.vo.Criteria;
 
@@ -16,8 +17,8 @@ public class BoardServiceImpl implements BoardService {
 	private BoardDAO boardDAO;
 	
 	@Override
-	public int insertBoard(BoardVO boardVO) {
-		return boardDAO.insertBoard(boardVO);
+	public void insertBoard(BoardVO boardVO, List<BoardFileVO> fileList) {
+		boardDAO.insertBoard(boardVO, fileList);
 	}
 	
 	
@@ -37,8 +38,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	@Override
-	public void updateBoard(BoardVO boardVO) {
-		boardDAO.updateBoard(boardVO);
+	public void updateBoard(BoardVO boardVO, List<BoardFileVO> uFileList) {
+		boardDAO.updateBoard(boardVO, uFileList);
 	}
 	
 	@Override
@@ -49,5 +50,15 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public int getBoardTotalCnt(Map<String, String> paramMap) {
 		return boardDAO.getBoardTotalCnt(paramMap);
+	}
+	
+	@Override
+	public List<BoardFileVO> getBoardFileList(int boardNo) {
+		return boardDAO.getBoardFileList(boardNo);
+	}
+	
+	@Override
+	public BoardFileVO getBoardFile(BoardFileVO boardFileVO) {
+		return boardDAO.getBoardFile(boardFileVO);
 	}
 }

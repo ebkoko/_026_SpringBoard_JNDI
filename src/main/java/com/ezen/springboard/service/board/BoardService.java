@@ -3,12 +3,13 @@ package com.ezen.springboard.service.board;
 import java.util.List;
 import java.util.Map;
 
+import com.ezen.springboard.vo.BoardFileVO;
 import com.ezen.springboard.vo.BoardVO;
 import com.ezen.springboard.vo.Criteria;
 
 public interface BoardService {
 	//게시글 등록
-	int insertBoard(BoardVO boardVO);
+	void insertBoard(BoardVO boardVO, List<BoardFileVO> fileList);
 	
 	//게시글 목록 조회
 	List<BoardVO> getBoardList(Map<String, String> paramMap, Criteria cri);
@@ -20,7 +21,7 @@ public interface BoardService {
 	void updateBoardCnt(int boardNo);
 	
 	//게시글 수정
-	void updateBoard(BoardVO boardVO);
+	void updateBoard(BoardVO boardVO, List<BoardFileVO> uFileList);
 	
 	//게시글 삭제
 	void deleteBoard(int boardNo);
@@ -29,4 +30,9 @@ public interface BoardService {
 	//검색했을 때는 검색된 게시글의 총 개수를 조회
 	int getBoardTotalCnt(Map<String, String> paramMap);
 	
+	// 첨부파일 리스트 조회
+	List<BoardFileVO> getBoardFileList(int boardNo);
+	
+	// 게시글 파일정보 한 건 조회
+	BoardFileVO getBoardFile(BoardFileVO boardFileVO);
 }
