@@ -48,6 +48,9 @@ public class BoardDAO {
 	
 	
 	public BoardVO getBoard(int boardNo) {
+		Map<String, Object> testMap = mybatis.selectOne("BoardDAO.getBoardMap", boardNo);
+		System.out.println(testMap.toString());
+		
 		return mybatis.selectOne("BoardDAO.getBoard", boardNo);
 	}
 	
